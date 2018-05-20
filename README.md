@@ -69,3 +69,50 @@
  * e.g. import static java.labg.Math.PI;
 * 全体引入，是指引入类中的所有静态成员
  * e.g. import static java.lang.Math.*;
+ 
+ ## 2.2-5 类的成员访问权限控制
+**访问修饰符**
+ * public
+  * 可以被任何方法访问
+ * protected
+  * 只可以被同一类及其子类的方法访问
+ * private
+   * 只能被同一类的方法访问
+   * e.g. A类的test类就不能直接访问A类的private成员
+ * default（包访问权限）
+  * 仅允许同一个包的访问
+ 
+ **set 方法 和 get 方法**
+ * this 关键字
+   * 如果方法内的局部变量名与实例变量名相同，
+   则方法体内访问实例变量时需要this关键字
+## 2.3-1 对象初始化
+
+**构造方法**
+* 方法名与类名相同
+* 不定义返回类型
+* 通常被声明为public
+* `作用：完成对象的初始化工作`
+* 若不定义构造方法，编译器自动调用默认构造方法，那么对象变量会为0（基本数据类型）或者null（引用）
+
+**自定义构造方法与方法重载**
+* 在生成对象时给构造方法传送初始值，为对象进行初始化
+* 构造方法可以被重载
+ * 一个类中有两个及以上同名的方法，但参数表不同，这种情况就被称为`方法重载`
+ * 在方法调用时，可以`通过参数列表的不同`来辨别应调用哪一个方法
+* 一旦显式地声明了构造方法，编译器就不再生成默认的构造方法
+* 我们可以显示声明`无参数`的构造方法，方法体中可以定义默认初始化方式
+
+**使用this的重载构造方法**
+```java
+public BankAccount(){
+      this("",999999,0.0f);
+}
+
+public BankAccount(String name, int accountNumber, float balance){
+      this.name = name;
+      this.accountNumber = accountNumber；
+      this.balance = balance;
+}
+
+```
