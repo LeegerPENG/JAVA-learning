@@ -62,4 +62,10 @@
   * 类和接口的声明 
 * 一个编译单元中只能有一个public类，该类名与文件名相同，
     编译单元中的其他类往往是public类的辅助类，
-    经过编译，每个类都会产生一个class文件。
+    经过编译，每个类都会产生一个class文件。  
+    
+**静态引入**
+* 单一引入，是指引入某一个特定的静态成员 
+ * e.g. import static java.labg.Math.PI;
+* 全体引入，是指引入类中的所有静态成员
+ * e.g. import static java.lang.Math.*;
